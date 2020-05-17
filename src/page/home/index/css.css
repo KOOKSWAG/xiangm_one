@@ -1,0 +1,9 @@
+.box p{
+    width:150px;height: 150px;
+    border: 1px solid #cccccc;
+    float: left;
+    margin-left: 30px;
+}
+.feny{
+    float: left;
+}

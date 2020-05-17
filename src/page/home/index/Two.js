@@ -24,7 +24,7 @@ export default class Two extends Component {
         console.log(values);
         axios.post('/api/index.php/home/v5/add',qs.stringify(values)).then(res=>{
             if(res.data.status==200){
-                // this.props.history.push('home')
+                this.props.history.push('thr')
                 alert('添加成功')
             }
            else{

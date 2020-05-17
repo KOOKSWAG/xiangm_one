@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 
-export default class One extends Component {
-    
+export default class Thr extends Component {
     render() {
         return (
             <div>
-                123123
+                567567
             </div>
         )
     }

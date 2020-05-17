@@ -2,8 +2,12 @@
     width:150px;height: 150px;
     border: 1px solid #cccccc;
     float: left;
-    margin-left: 30px;
+    margin-left: 50px;
 }
 .feny{
     float: left;
+}
+.outBox div{
+    float: left;
+    margin-left: 50px;
 }

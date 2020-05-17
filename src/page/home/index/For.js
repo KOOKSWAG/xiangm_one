@@ -42,7 +42,7 @@ export default class For extends Component {
                         })
                     }
                 </div>
-                <div className="feny"><Pagination defaultCurrent={1} onChange={this.onChange} total={count} pageSize={6} /></div>;
+                <div className="feny"><Pagination defaultCurrent={1} onChange={this.onChange} total={count} pageSize={6} /></div>
             </React.Fragment>
         )
     }

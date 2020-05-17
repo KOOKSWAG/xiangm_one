@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Input, InputNumber, Button } from 'antd';
+import axios from 'axios'
+import qs from 'qs'
 
 const layout = {
     labelCol: { span: 8 },
@@ -20,23 +22,32 @@ const layout = {
 export default class Two extends Component {
     onFinish = values => {
         console.log(values);
+        axios.post('/api/index.php/home/v5/add',qs.stringify(values)).then(res=>{
+            if(res.data.status==200){
+                // this.props.history.push('home')
+                alert('添加成功')
+            }
+           else{
+                alert('添加失败')
+           }
+        })
       };
     render() {
         return (
             <Form {...layout} name="nest-messages" onFinish={this.onFinish} validateMessages={validateMessages}>
-                <Form.Item name={['user', 'name']} label="用户名" rules={[{ required: true }]}>
+                <Form.Item name={'name'} label="用户名" rules={[{ required: true }]}>
                     <Input />
                 </Form.Item>
-                <Form.Item name={['user', 'age']} label="年龄" rules={[{ type: 'number', min: 0, max: 99 }]}>
+                <Form.Item name={'age'} label="年龄" rules={[{ type: 'number', min: 0, max: 99 }]}>
                     <InputNumber />
                 </Form.Item>
-                <Form.Item name={['user', 'gender']} label="标题" rules={[{ required: true }]}>
+                <Form.Item name={'gender'} label="标题" rules={[{ required: true }]}>
                     <Input />
                 </Form.Item>
-                <Form.Item name={['user', 'msg']} label="价格" rules={[{ required: true }]}>
+                <Form.Item name={'msg'} label="价格" rules={[{ required: true }]}>
                     <Input />
                 </Form.Item>
-                <Form.Item name={['user', 'hospital']} label="信息" rules={[{ required: true }]}>
+                <Form.Item name={'hospital'} label="信息" rules={[{ required: true }]}>
                     <Input />
                 </Form.Item>
                 <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>

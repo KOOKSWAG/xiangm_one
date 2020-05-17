@@ -20,12 +20,12 @@ moment.locale('zh-cn');
 
 
 ReactDOM.render(
-  <Provider store={store} >
+  
   <HashRouter>
     <ConfigProvider locale={zhCN}>
       <App />
     </ConfigProvider>
   </HashRouter>
-  </Provider>,
+  ,
   document.querySelector('#root')
 );

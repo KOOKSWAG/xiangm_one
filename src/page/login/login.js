@@ -24,11 +24,11 @@ export default class login extends Component {
         console.log('Success:', values);
         axios.post('/api/index.php/home/v1/login',qs.stringify(values)).then(res=>{
             if(res.data.status==200){
+                this.props.history.push('home')
                 alert('登录成功')
-                
             }
            else{
-            alert('登录失败')
+                alert('登录失败')
            }
         })
       };

@@ -24,6 +24,7 @@ export default class zhuce extends Component {
         console.log('Success:', values);
         axios.post('/api/index.php/home/v1/register',qs.stringify(values)).then(res=>{
             if(res.data.status==200){
+                this.props.history.push('login')
                 alert('注册成功')
             }
            else{

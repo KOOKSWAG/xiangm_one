@@ -44,7 +44,7 @@ export default class Thr extends Component {
         let {arr} = this.state
         return (
             <div>
-                <Table dataSource={arr} columns={columns} style ={{ width:500 }}/>
+                <Table dataSource={arr} columns={columns} style ={{ width:500 }} rowKey={v => v.id}/>
             </div>
         )
     }

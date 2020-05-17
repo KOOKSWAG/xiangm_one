@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Login from './page/login/login'
 import Zhuce from './page/zhuce/zhuce'
 import Home from './page/home/home';
+import One from './page/home/index/One';
 
 function App() {
   return (
@@ -12,7 +13,6 @@ function App() {
         <Route path="/Login" component={Login}/>
         <Route path="/Zhuce" component={Zhuce}/>
         <Route path="/Home" component={Home}/>
-        <Route path="/Home/One" component={One}/>
         <Route path="/" component={Login}/>
       </Switch>
     </div>

@@ -10,7 +10,7 @@ import {
   MailOutlined,
 } from '@ant-design/icons';
 import { NavLink } from 'react-router-dom';
-const { SubMenu } = Menu;
+// const { SubMenu } = Menu;
 
 export default class home extends Component {
     state = {
@@ -28,7 +28,7 @@ export default class home extends Component {
                 <div className="top">
                     <span>purple</span>
                     <span><input type="text" placeholder="输入你要搜索的内容"/></span>
-                    <span>123</span>
+                    <span>用户名:{localStorage.getItem('user')}</span>
                 </div>
                 <div style={{ width: 256 }}>
         <Menu

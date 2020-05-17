@@ -26,7 +26,6 @@ export default class Thr extends Component {
     }
     render() {
         let {arr} = this.state
-        console.log(arr)
         const columns = [
             {
               title: '姓名',

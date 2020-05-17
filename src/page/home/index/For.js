@@ -14,7 +14,6 @@ export default class For extends Component {
         this.onChange(1)
     }
     onChange = page => {
-        console.log(page);
         this.setState({
           current: page,
         });
@@ -22,7 +21,6 @@ export default class For extends Component {
             page,
             limit: 6,
         })).then(res=>{
-           console.log(res.data)
            this.setState({
                arr:res.data.result.list,
                count: res.data.result.count

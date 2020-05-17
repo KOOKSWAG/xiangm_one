@@ -21,7 +21,6 @@ const layout = {
 
 export default class Two extends Component {
     onFinish = values => {
-        console.log(values);
         axios.post('https://api.baxiaobu.com/index.php/home/v5/add',qs.stringify(values)).then(res=>{
             if(res.data.status==200){
                 this.props.history.push('thr')

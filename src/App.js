@@ -4,7 +4,6 @@ import { Switch, Route } from 'react-router-dom';
 import Login from './page/login/login'
 import Zhuce from './page/zhuce/zhuce'
 import Home from './page/home/home';
-import One from './page/home/index/One';
 
 function App() {
   return (

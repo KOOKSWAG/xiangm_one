@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Form, Input, Button, Checkbox } from 'antd';
 import axios from 'axios'
 import qs from 'qs'
+import {connect} from 'react-redux'
+import {denglu} from '../../actions/login'
 import { NavLink } from 'react-router-dom';
 
 const layout = {
@@ -19,13 +21,16 @@ const tailLayout = {
     },
 };
 
-export default class login extends Component {
+export default @connect(state=>({}),{
+  denglu
+})
+class login extends Component {
     onFinish = values => {
         axios.post('/api/index.php/home/v1/login',qs.stringify(values)).then(res=>{
             if(res.data.status==200){
-                this.props.history.push('home')
-                localStorage.setItem('user',values.username)
+                this.props.history.push('/home')
                 alert('登录成功')
+                this.props.denglu(res.data.data)
             }
            else{
                 alert('登录失败')

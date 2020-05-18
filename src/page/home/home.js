@@ -15,13 +15,23 @@ import Two from './index/Two';
 import Thr from './index/Thr';
 import For from './index/For';
 import './css.css'
+import {connect} from 'react-redux'
 // const { SubMenu } = Menu;
 
-export default class home extends Component {
+export default @connect(state=>({
+    username:state.login.username
+}))
+class home extends Component {
     state = {
         collapsed: false,
       };
-    
+    constructor(props){
+        super(props)
+        console.log(this.props.username)
+        if(!this.props.username){
+            this.props.history.push('/login')
+        }
+    }
       toggleCollapsed = () => {
         this.setState({
           collapsed: !this.state.collapsed,
@@ -33,7 +43,7 @@ export default class home extends Component {
                 <div className="top">
                     <span>purple</span>
                     <span><input type="text" placeholder="输入你要搜索的内容"/></span>
-                    <span>用户名:{localStorage.getItem('user')}</span>
+                    <span>用户名:{this.props.username}</span>
                 </div>
                 <div className="box">
                 <div style={{ width: 256 }}>

@@ -4,12 +4,13 @@ import thunk from 'redux-thunk'
 import { persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2'
+import {login} from './reduces' 
 
 const rootPersistConfig = {
   key: 'root',
   storage,
   stateReconciler: autoMergeLevel2,
-  whitelist: ['list'],  
+  whitelist: ['login'],  
 }
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
@@ -18,7 +19,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const myPersistReducer = persistReducer(
   rootPersistConfig,
   combineReducers({
-    //这里是引入的组件
+    login
   }
 ))
 

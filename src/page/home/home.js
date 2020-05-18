@@ -27,11 +27,12 @@ class home extends Component {
       };
     constructor(props){
         super(props)
-        console.log(this.props.username)
-        if(!this.props.username){
-            this.props.history.push('/login')
+        console.log(props)
+        if(!props.username){
+            props.history.push('/login')
         }
     }
+    
       toggleCollapsed = () => {
         this.setState({
           collapsed: !this.state.collapsed,
